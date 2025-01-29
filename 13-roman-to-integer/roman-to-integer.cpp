@@ -61,6 +61,5 @@ private:
             return 0; // 0 stands for add to temp value 
         else
             return -1;  // -1 stands for subtract from the next value. Empy the temp value in the same manner.
-
     }
 };
