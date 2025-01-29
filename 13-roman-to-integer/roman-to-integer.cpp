@@ -61,25 +61,6 @@ private:
             return 0; // 0 stands for add to temp value 
         else
             return -1;  // -1 stands for subtract from the next value. Empy the temp value in the same manner.
-        
-        // switch(curr_val){
-        //     case I :
-        //         break;
-        //     case V :
-        //         break;
-        //     case X :
-        //         break;
-        //     case L :
-        //         break;
-        //     case C :
-        //         break;
-        //     case D :
-        //         break;
-        //     case M :
-        //         break;
-        //     default: 
-        //         cout<<"Error: Invalid Input";
-        // }
 
     }
 };
