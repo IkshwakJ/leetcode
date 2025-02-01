@@ -4,7 +4,7 @@ public:
 
         int len_a = a.size() - 1, len_b = b.size() - 1, i = len_a, j = len_b;
         int transfer = 0, count = 0;
-        string c(max(len_a,len_b) + 1,'0');
+        string c(max(len_a,len_b) + 1,'0'); // using a preinitialized string to save on time.
         int len = c.size();
         char x;
         while (i >= 0 || j >=0 || transfer == 1){
