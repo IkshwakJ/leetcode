@@ -1,22 +1,19 @@
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
-    int bits_count[32] = {0};
-    int result = 0;
-    int n = nums.size() - 1;
-    for (int bit = 0; bit<32; bit++){
-        int mask = 1<<bit;
-            for(int i = 1; i <= n; i++){
-                if(i&mask)
-                    bits_count[bit]--;
-            }
-            for(int num: nums){
-                if(num&mask)
-                    bits_count[bit]++;
-            }
-            if (bits_count[bit] > 0)
-                result |= mask;
-    }
-    return result;
+        int slow = 0; 
+        int fast = 0;
+        // This loop will result in finding the index at which we have a loop in the input numbers.
+        do{
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        }while(slow != fast);
+
+        slow = 0;
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return slow;
     }
 };
