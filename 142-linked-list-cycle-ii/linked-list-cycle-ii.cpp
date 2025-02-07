@@ -14,18 +14,18 @@ public:
             return nullptr;
         ListNode* slow = head;
         ListNode* fast = head;
-        do{
+        while(fast && fast->next){
             slow = slow->next;
-            if(fast == nullptr || fast->next == nullptr)
-                return nullptr;
             fast = fast->next->next;
-
-        }while(slow != fast);    
-        slow = head;
-        while(slow != fast){
-            slow = slow->next;
-            fast = fast->next;
+            if (slow == fast){
+                slow = head;
+                while(slow != fast){
+                    slow = slow->next;
+                    fast = fast->next;
+                }
+                return slow;
+            }
         }
-        return slow;
+        return nullptr;    
     }
 };
