@@ -2,8 +2,6 @@
 class Solution {
 public:
     int countPrimeSetBits(int left, int right) {
-        vector<int> result (right+1,0);
-        int i = left;
         int temp, set_bit_cnt;
         int number_of_primes = 0;
         int primes[11] = {2,3,5,7,11,13,17,19,23,29,31};
