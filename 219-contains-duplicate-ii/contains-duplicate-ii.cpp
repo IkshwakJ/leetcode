@@ -9,9 +9,7 @@ public:
                 if (i + 1 - mp[nums[i]] <= k) {
                     return true;
                 } 
-                else {
-                    mp[nums[i]] = i + 1;
-                }
+                mp[nums[i]] = i + 1;
             } else {
                 mp[nums[i]] = i + 1;
             }
