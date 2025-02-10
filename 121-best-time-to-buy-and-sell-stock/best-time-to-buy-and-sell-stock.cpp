@@ -2,7 +2,6 @@ class Solution {
 public:
     int maxProfit(vector<int>& prices) {
         // Kadane
-        
         int len = prices.size();
         if(len == 0){
             return 0;
