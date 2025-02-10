@@ -10,7 +10,8 @@ public:
                     return true;
                 } 
                 mp[nums[i]] = i + 1;
-            } else {
+            } 
+            else {
                 mp[nums[i]] = i + 1;
             }
         }
