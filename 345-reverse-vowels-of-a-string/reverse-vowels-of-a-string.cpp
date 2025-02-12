@@ -12,9 +12,7 @@ public:
             while(j>=0 && vowels[s[j]] != 1 && i<j){
                 j--;
             }
-            if(i < j){
-                swap(s[i],s[j]);
-            }
+            swap(s[i],s[j]);
             i++; 
             j--;
         }    
