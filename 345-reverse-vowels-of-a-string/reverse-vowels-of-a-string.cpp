@@ -4,14 +4,13 @@ public:
         int len = s.size();
         int j = len - 1;
         int i  = 0;
+        unordered_map<char,int> vowels {{'a',1},{'e',1},{'i',1},{'o',1},{'u',1},{'A',1},{'E',1},{'I',1},{'O',1},{'U',1}};
         while(i<j){
-            while(i<len && s[i] != 'a' && s[i] != 'e' && s[i] != 'i' && s[i] != 'o' && s[i] != 'u' && s[i] != 'A' && s[i] != 'E' && s[i] != 'I' && s[i] != 'O' && s[i] != 'U'){
+            while(i<len && vowels[s[i]] != 1){
                 i++;
-                cout<<i<<", ";
             }
-            while(j>=0 && s[j] != 'a' && s[j] != 'e' && s[j] != 'i' && s[j] != 'o' && s[j] != 'u' && s[j] != 'A' && s[j] != 'E' && s[j] != 'I' && s[j] != 'O' && s[j] != 'U'){
+            while(j>=0 && vowels[s[j]] != 1){
                 j--;
-                cout<<j<<", ";
             }
             if(i < j){
                 swap(s[i],s[j]);
