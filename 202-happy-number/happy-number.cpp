@@ -4,19 +4,23 @@ public:
         if(n&0x80000000){
             return false;
         }
-        unordered_map<int,int> sums;
-        int sum = 0;
-        while(n != 1){
-            sum = 0;
-            while(n != 0){
-                sum += (n%10)*(n%10);
-                n = n/10;
-            }
-            if(++sums[sum] > 1){
-                return false;
-            }
-            n = sum;
+        int slow = n;
+        int fast = n;
+        do{
+            slow = squared_sum_of_digits(slow);
+            fast = squared_sum_of_digits(squared_sum_of_digits(fast));
+        }while(slow != fast);
+        if(slow == 1){
+            return true;
         }
-        return true;
+        return false;
+    }
+    int squared_sum_of_digits(int x){
+        int sum = 0;
+        while(x != 0){
+            sum += (x%10)*(x%10);
+            x /= 10;
+        }
+        return sum;
     }
 };
