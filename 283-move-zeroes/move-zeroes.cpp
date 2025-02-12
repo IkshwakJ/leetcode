@@ -4,6 +4,7 @@ public:
         int curr = 0; 
         int next = 1;
         int len = nums.size();
+        
         while(next < len && curr < len){
             if(nums[curr] == 0 && nums[next] != 0){
                 nums[curr] = nums[next];
