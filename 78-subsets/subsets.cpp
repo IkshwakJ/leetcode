@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
         int len = nums.size();
-        int possible = 1<<nums.size();
+        int possible = 1<<len;
         vector<vector<int>> result;
         for(int i = 0; i < possible; i++){
             vector<int> row;
