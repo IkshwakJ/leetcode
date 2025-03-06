@@ -11,6 +11,9 @@ public:
         while(!alph.empty() && freq[alph.front().first - 'a'] > 1){
             alph.pop();
         }
-        return alph.empty() ? -1 : alph.front().second;
+        if(!alph.empty()){
+            return alph.front().second;
+        }
+        return -1;
     }
 };
